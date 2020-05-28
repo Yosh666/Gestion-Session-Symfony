@@ -6,6 +6,11 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        {% block nav %}
+        
+            <a href="{{ path('home')}} " style="padding:1em;background-color:#BA347E;color:#BBBBBB;border:1px solid black; " >Accueil</a>
+        
+        {% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

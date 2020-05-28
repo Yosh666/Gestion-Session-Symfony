@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau stagiaire{% endblock %}
+
+{% block body %}
+    <h1>Un nouveau dans la team?</h1>
+
+    {{ include('stagiaire/_form.html.twig') }}
+
+    <a href="{{ path('stagiaire_index') }}">Retour à la liste</a>
+{% endblock %}
