@@ -65,6 +65,11 @@ class Programme
         return $this->blocmodules;
     }
 
+    //FIXME
+    /*public function getBlocmodulesName(){
+        return $this->blocmodules->getName();
+    }*/
+
     public function addBlocmodule(Blocmodule $blocmodule): self
     {
         if (!$this->blocmodules->contains($blocmodule)) {

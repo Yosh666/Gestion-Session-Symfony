@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Session{% endblock %}
+
+{% block body %}
+    <h1>Session</h1>
+
+    <table class="table">
+        <tbody>
+            
+            <tr>
+                <th>Intitulé</th>
+                <td>{{ session.title }}</td>
+            </tr>
+            <tr>
+                <th>Commencé le</th>
+                <td>{{ session.startedAt ? session.startedAt|date('d-m-Y') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Finis le </th>
+                <td>{{ session.endedAt ? session.endedAt|date('d-m-Y') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Nbre de places prévues</th>
+                <td>{{ session.nbSeat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('session_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('session_edit', {'id': session.id}) }}">Editer</a>
+
+    {{ include('session/_delete_form.html.twig') }}
+{% endblock %}

@@ -25,7 +25,7 @@ class Blocmodule
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=categorie::class, inversedBy="blocmodules")
+     * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="blocmodules")
      * @ORM\JoinColumn(nullable=false)
      */
     private $categories;

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Session{% endblock %}
+
+{% block body %}
+    <h1>liste des sessions</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>Intitulé</th>
+                <th>Commence le</th>
+                <th>Finis le</th>
+                <th>Nombre de places prévues</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for session in sessions %}
+            <tr>
+                
+                <td>{{ session.title }}</td>
+                <td>{{ session.startedAt ? session.startedAt|date('d-m-Y') : '' }}</td>
+                <td>{{ session.endedAt ? session.endedAt|date('d-m-Y') : '' }}</td>
+                <td>{{ session.nbSeat }}</td>
+                <td>
+                    <button><a href="{{ path('session_show', {'id': session.id}) }}">voir</a></button>
+                    <button><a href="{{ path('session_edit', {'id': session.id}) }}">editer</a></button>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Pas de session pour l'instant</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('session_new') }}">Créer une session</a>
+{% endblock %}

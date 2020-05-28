@@ -40,7 +40,7 @@ class Session
     private $nb_seat;
 
     /**
-     * @ORM\ManyToMany(targetEntity=stagiaire::class, inversedBy="sessions")
+     * @ORM\ManyToMany(targetEntity=Stagiaire::class, inversedBy="sessions")
      */
     private $stagiaires;
 
