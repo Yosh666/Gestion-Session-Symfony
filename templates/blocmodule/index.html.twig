@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blocmodule index{% endblock %}
+
+{% block body %}
+    <h1>Blocmodule index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for blocmodule in blocmodules %}
+            <tr>
+                <td>{{ blocmodule.id }}</td>
+                <td>{{ blocmodule.name }}</td>
+                <td>
+                    <a href="{{ path('blocmodule_show', {'id': blocmodule.id}) }}">show</a>
+                    <a href="{{ path('blocmodule_edit', {'id': blocmodule.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('blocmodule_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Blocmodule{% endblock %}
+
+{% block body %}
+    <h1>Create new Blocmodule</h1>
+
+    {{ include('blocmodule/_form.html.twig') }}
+
+    <a href="{{ path('blocmodule_index') }}">back to list</a>
+{% endblock %}

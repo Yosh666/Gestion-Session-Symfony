@@ -36,6 +36,9 @@ class SessionType extends AbstractType
                 'multiple'=>true,
                 "required"=>false
             ])*/
+            /*BUG
+            et si on passait par une page spéciale pr le programme de chaque session de formation 
+            penser make:crud programme*/
         ;
     }
 
